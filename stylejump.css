@@ -1,0 +1,68 @@
+.ground{
+  position:relative;
+  background:rgb(99, 167, 238);
+  height:600px;
+  width: 70vw;
+  top:30px;
+  border:2px solid black;
+}
+.dino{
+  position:relative;
+  height:150px;
+  width:50px;
+  top:450px;
+  background-color:rgb(235, 60, 60);
+}
+.block{
+  position: absolute;
+  height: 60px;
+  width:30px;
+  top:540px;
+  right:0%;
+  background-color: black;
+  animation: dropb 1s cubic-bezier(0, 0, 0.61, 1.91) 1;
+}
+.startrun{
+  animation: run 1.8s linear infinite;
+}
+.dropd{
+  animation: dropd 1s cubic-bezier(0, 0, 0.61, 1.91) 1;
+}
+.jump{
+  animation: bounce 0.5s ease-out;
+}
+@keyframes bounce{
+  50%{
+    top:300px;
+  }
+}
+@keyframes run{
+  50%{
+    right:56%;
+  }
+  75%{
+    right:90%;
+  }
+  90%{
+    right:108%;
+  }
+  100%{
+  right:120%;
+  }
+}
+@keyframes dropd {
+  0%{
+    top:100px;
+  }
+  100%{
+    top:450px;
+  }
+}
+@keyframes dropb {
+  0%{
+    top:0px;
+  }
+  100%{
+    top:540px;
+  }
+}

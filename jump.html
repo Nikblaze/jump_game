@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylejump.css">
+  </head>
+  <body>
+    <div class="ground">
+    <div class="dino">
+    </div>
+    <div class="block">
+    </div>
+    </div>
+  </body>
+  <script>
+    function fun(e){
+      let box=document.querySelector('.dino');
+      box.classList.add('jump');
+      let cac=document.querySelector('.block');
+        cac.classList.add('startrun');
+      }
+
+    document.addEventListener('keydown',fun);
+    const box=document.querySelector('.dino');
+    const cactus=document.querySelector('.block');
+    box.classList.add('dropd');
+    box.addEventListener('animationend',function(e){
+      e.target.classList.remove('jump');
+      e.target.classList.remove('dropd');
+    });
+    
+  setInterval(()=>{
+    let dinotop=parseInt(window.getComputedStyle(box).getPropertyValue('top'));
+    let cleft=parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
+if(cleft<50&&cleft>0&&dinotop>=450){
+  console.log('collision');
+  alert(`Game Over!`);
+  let cac=document.querySelector('.block');
+  cac.classList.remove('startrun');
+  box.classList.add('dropd');
+
+}
+  },10);
+  </script>
+</html>
