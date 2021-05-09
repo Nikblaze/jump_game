@@ -12,6 +12,7 @@
     <div class="block">
     </div>
     </div>
+
   </body>
   <script>
     function fun(e){
@@ -20,7 +21,6 @@
       let cac=document.querySelector('.block');
         cac.classList.add('startrun');
       }
-
     document.addEventListener('keydown',fun);
     const box=document.querySelector('.dino');
     const cactus=document.querySelector('.block');
@@ -29,7 +29,7 @@
       e.target.classList.remove('jump');
       e.target.classList.remove('dropd');
     });
-    
+
   setInterval(()=>{
     let dinotop=parseInt(window.getComputedStyle(box).getPropertyValue('top'));
     let cleft=parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
